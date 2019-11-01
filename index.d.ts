@@ -64,9 +64,9 @@ export type ActionType =
 
 export interface ActionConfig {
   type: string;
-  force: boolean;
-  data: object;
-  abortOnFail: boolean;
+  force?: boolean;
+  data?: object;
+  abortOnFail?: boolean;
 }
 
 export interface AddActionConfig extends ActionConfig {
@@ -84,13 +84,13 @@ export interface AddManyActionConfig
   base: string;
   templateFiles: string;
   globOptions: GlobbyOptions;
-  verbose: boolean;
+  verbose?: boolean;
 }
 
 export interface ModifyActionConfig extends ActionConfig {
   type: "modify";
   path: string;
-  pattern: string | RegExp;
+  pattern?: string | RegExp;
   template: string;
   templateFile: string;
 } 
@@ -99,8 +99,8 @@ export interface AppendActionConfig extends ActionConfig {
   type: "append";
   path: string;
   pattern: string | RegExp;
-  unique: boolean;
-  separator: string;
+  unique?: boolean;
+  separator?: string;
   template: string;
   templateFile: string;
 }
